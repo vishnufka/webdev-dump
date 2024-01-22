@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head') %> 
+
+    <h1>You are browsing the <%= data["name"] %> Subreddit</h1>
+    <h2><%= data["description"] %></h2>
+    <h2><%= data["subscribers"] %> Subscribers</h2>
+    <hr/>
+    <% data["posts"].forEach(element => { %>
+        <article>
+            <div><%= element["title"] %> - <b><%= element["author"] %></b></div>
+            <div><% if (element["img"]) { %>
+                <img src=<%= element["img"] %> ></img>
+            <% } %></div>
+            </article>
+    <% }) %>
+</body>
+</html>
